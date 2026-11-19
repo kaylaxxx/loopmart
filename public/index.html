@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LoopMart — Built by an agent. Verified by Kane.</title>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header>
+  <h1>LoopMart</h1>
+  <p class="tagline">Built by an agent. Verified by Kane. Fixed by the loop.</p>
+</header>
+<main>
+  <section aria-label="Products">
+    <h2>Products</h2>
+    <div id="products" class="grid"></div>
+  </section>
+  <aside aria-label="Cart">
+    <h2>Your cart</h2>
+    <div id="cart-items"></div>
+    <label for="promo">Promo code</label>
+    <div class="promo-row">
+      <input id="promo" type="text" placeholder="SAVE10" autocomplete="off">
+      <button id="apply-promo" type="button">Apply promo</button>
+    </div>
+    <dl class="totals">
+      <div><dt>Subtotal</dt><dd id="subtotal">$0.00</dd></div>
+      <div><dt>Discount</dt><dd id="discount">-$0.00</dd></div>
+      <div><dt>Tax (8%)</dt><dd id="tax">$0.00</dd></div>
+      <div><dt>Shipping</dt><dd id="shipping">$0.00</dd></div>
+      <div class="grand"><dt>Total</dt><dd id="total">$0.00</dd></div>
+    </dl>
+    <button id="checkout" type="button">Check out</button>
+    <p id="order-status" role="status"></p>
+  </aside>
+</main>
+<script type="module" src="/app.mjs"></script>
+</body>
+</html>
