@@ -53,8 +53,12 @@ try {
     if (verdict.status === "passed") {
       exitCode = 0;
       await writeFile(new URL("../VERIFIED.md", import.meta.url),
-        `# Verified with Kane CLI\n\nLoopMart passed verification on ${new Date().toISOString()} ` +
-        `via the ${engine} engine after ${n} iteration(s).\n\n` +
+        `# LoopMart — verification status\n\n` +
+        (engine === "kane"
+          ? `Verified with Kane CLI on ${new Date().toISOString()} after ${n} iteration(s).\n\n`
+          : `Passed the local verification engine on ${new Date().toISOString()} after ${n} iteration(s). ` +
+            `The local engine speaks the same verdict shape as Kane Agent Mode; the real Kane CLI run ` +
+            `(npm run loop:kane) replaces it as soon as Kane login is configured, and only that run earns the "Verified with Kane CLI" claim.\n\n`) +
         `Kane scenario: 2x Ceramic Mug + 1x Linen Notebook, promo SAVE10 -> total $37.79.\n` +
         `Run evidence: runs/${stamp}/\n`);
       break;

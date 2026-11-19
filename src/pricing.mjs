@@ -30,6 +30,6 @@ export function cartTotals(items, promoCode = "") {
   const tax = round2(taxable * TAX_RATE);
   const shipping =
     subtotal === 0 || taxable >= FREE_SHIPPING_THRESHOLD ? 0 : FLAT_SHIPPING;
-  const total = round2(taxable - discount + tax + shipping);
+  const total = round2(taxable + tax + shipping);
   return { subtotal, discount, taxable, tax, shipping, total };
 }

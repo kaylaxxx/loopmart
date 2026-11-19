@@ -1,0 +1,101 @@
+{
+  "iteration": 1,
+  "engine": "local",
+  "verdict": {
+    "engine": "local",
+    "status": "failed",
+    "summary": "2 check(s) failed. First: kane-checkout: expected total $37.79, page pricing gives $34.41",
+    "final_state": {
+      "subtotal": "$33.75",
+      "discount": "$3.38",
+      "tax": "$2.43",
+      "shipping": "$4.99",
+      "total": "$34.41"
+    },
+    "steps": [
+      {
+        "step": 1,
+        "status": "done",
+        "remark": "Store page loads and exposes all cart UI hooks"
+      },
+      {
+        "step": 2,
+        "status": "failed",
+        "remark": "kane-checkout: expected total $37.79, page pricing gives $34.41"
+      },
+      {
+        "step": 3,
+        "status": "done",
+        "remark": "free-shipping: total $85.32 matches spec"
+      },
+      {
+        "step": 4,
+        "status": "failed",
+        "remark": "student-promo: expected total $50.88, page pricing gives $43.38"
+      },
+      {
+        "step": 5,
+        "status": "done",
+        "remark": "empty-cart: total $0.00 matches spec"
+      }
+    ],
+    "failures": [
+      {
+        "scenario": "kane-checkout",
+        "expected": {
+          "discount": 3.38,
+          "shipping": 4.99,
+          "subtotal": 33.75,
+          "tax": 2.43,
+          "taxable": 30.37,
+          "total": 37.79
+        },
+        "actual": {
+          "subtotal": 33.75,
+          "discount": 3.38,
+          "taxable": 30.37,
+          "tax": 2.43,
+          "shipping": 4.99,
+          "total": 34.41
+        },
+        "remark": "kane-checkout: expected total $37.79, page pricing gives $34.41"
+      },
+      {
+        "scenario": "student-promo",
+        "expected": {
+          "discount": 7.5,
+          "shipping": 4.99,
+          "subtotal": 49.99,
+          "tax": 3.4,
+          "taxable": 42.49,
+          "total": 50.88
+        },
+        "actual": {
+          "subtotal": 49.99,
+          "discount": 7.5,
+          "taxable": 42.49,
+          "tax": 3.4,
+          "shipping": 4.99,
+          "total": 43.38
+        },
+        "remark": "student-promo: expected total $50.88, page pricing gives $43.38"
+      }
+    ]
+  },
+  "diagnosis": [
+    {
+      "code": "DISCOUNT_APPLIED_TWICE",
+      "scenario": "kane-checkout",
+      "detail": "Total is exactly one discount (3.38) too low while subtotal, discount, tax and shipping are all correct: the discount is subtracted a second time inside the total formula."
+    },
+    {
+      "code": "DISCOUNT_APPLIED_TWICE",
+      "scenario": "student-promo",
+      "detail": "Total is exactly one discount (7.5) too low while subtotal, discount, tax and shipping are all correct: the discount is subtracted a second time inside the total formula."
+    }
+  ],
+  "fix": {
+    "patched": true,
+    "description": "Patched src/pricing.mjs for DISCOUNT_APPLIED_TWICE: total = round2(taxable + tax + shipping) — the discount is already inside 'taxable', so it must not be subtracted again."
+  }
+}
