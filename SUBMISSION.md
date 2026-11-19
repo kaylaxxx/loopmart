@@ -58,9 +58,24 @@ Kane speaks NDJSON, the agent speaks patches. run_end → diagnosis →
 one-expression fix → run_end: passed. Evidence pack, loop report and
 all: [repo]"
 
+## Kane evidence (real run, 2026-11-20 ~00:35–00:45 WIB)
+
+- `npm run loop:kane` iteration 1: **PASSED**, exit 0. Kane drove the
+  store in a real browser: 2x Ceramic Mug + 1x Linen Notebook, SAVE10,
+  subtotal $33.75, discount -$3.38, tax $2.43, shipping $4.99, total
+  **$37.79**, checkout confirmed "Order placed — 3 item(s)".
+- Credits consumed: 30.25. Run stamp: runs/2026-11-19T17-35-03-583Z/
+  (loop-report.md + iter-1.json). VERIFIED.md stamped by the loop.
+- Test Manager (share link):
+  https://test-manager.lambdatest.com/projects/01M7TC6AY4S8EJC4JQYK34748V/test-cases/01M7TE3472ST5QVGQ5AYKSE7PV/dashboard/share/US_JTT3QRCDPUFQWSCR3N8FIEX3BEEHWIDUAF10DKJQQD6XNUS3QVMM6DEBQK1SCW4I?type=summary&agentView=true&fqdn=summary-page
+- VM env recipe that made Kane run here: KANE_CLI_CHROME_PATH pointed
+  at the Playwright Chromium build, and NO_PROXY/no_proxy cleaned to
+  "localhost,127.0.0.1" (the VM's default no_proxy contains IPv6
+  literals that crash Kane's proxy parser with "Invalid port: ':1]'").
+
 ## Checklist before submit
 
-- [ ] Kane login (username + access key) and `npm run loop:kane` PASSED,
+- [x] Kane login (username + access key) and `npm run loop:kane` PASSED,
       evidence pack + Test Manager link saved under runs/
 - [ ] Public GitHub repo pushed (init date ≥ 12 Nov 2026 ✓ — 19 Nov)
 - [ ] README setup verified from a clean clone (npm start, npm test)

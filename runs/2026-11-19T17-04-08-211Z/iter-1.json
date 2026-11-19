@@ -1,0 +1,16 @@
+{
+  "iteration": 1,
+  "engine": "kane",
+  "verdict": {
+    "engine": "kane",
+    "status": "not_started",
+    "exitCode": 2,
+    "summary": "Kane run never started (exit 2): sign-in, configuration, or Chrome is missing. No credits are used for a refused run.",
+    "stderr_tail": "Running on: Desktop · Chrome\nGoogle Chrome is required but was not found at /usr/bin/google-chrome.\n(amd64 / x86_64 only — Google does not ship Chrome for Linux ARM.)\n\nDebian / Ubuntu (any version):\n  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb\n  sudo apt install -y ./google-chrome-stable_current_amd64.deb\n\nFedora / RHEL / AlmaLinux / Rocky:\n  sudo dnf install -y https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm\n\nThen re-run your command. Set KANE_CLI_CHROME_PATH=/path/to/chrome\nto point at a non-standard install.\n",
+    "steps": [],
+    "failures": [],
+    "final_state": null
+  },
+  "diagnosis": [],
+  "fix": null
+}

@@ -1,0 +1,16 @@
+{
+  "iteration": 1,
+  "engine": "kane",
+  "verdict": {
+    "engine": "kane",
+    "status": "not_started",
+    "exitCode": 2,
+    "summary": "Kane run never started (exit 2): sign-in, configuration, or Chrome is missing. No credits are used for a refused run.",
+    "stderr_tail": "Running on: Desktop · Chrome\n",
+    "steps": [],
+    "failures": [],
+    "final_state": null
+  },
+  "diagnosis": [],
+  "fix": null
+}

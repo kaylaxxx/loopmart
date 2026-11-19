@@ -1,0 +1,175 @@
+{
+  "iteration": 1,
+  "engine": "kane",
+  "verdict": {
+    "engine": "kane",
+    "status": "passed",
+    "exitCode": 0,
+    "summary": "Added two Ceramic Mugs and one Linen Notebook to the cart, as requested.\nApplied the SAVE10 promo code and confirmed the updated order summary: subtotal $33.75, discount -$3.38, tax $2.43, shipping $4.99, and total $37.79.\nClicked Check out, and the page confirmed that the order was placed for 3 items.",
+    "credits_consumed": 30.250112499999997,
+    "test_url": "https://test-manager.lambdatest.com/projects/01M7TC6AY4S8EJC4JQYK34748V/test-cases/01M7TE3472ST5QVGQ5AYKSE7PV/dashboard/share/US_JTT3QRCDPUFQWSCR3N8FIEX3BEEHWIDUAF10DKJQQD6XNUS3QVMM6DEBQK1SCW4I?type=summary&agentView=true&fqdn=summary-page",
+    "session_dir": "/home/hatch/.testmuai/kaneai/sessions/03db6a7e-2bca-4d99-b218-3d66f23ea591",
+    "final_state": {
+      "url": "http://localhost:4173/",
+      "subtotal": "$33.75",
+      "discount": "-$3.38",
+      "tax": "$2.43",
+      "shipping": "$4.99",
+      "total": "$37.79",
+      "order_status": "Order placed — 3 item(s)."
+    },
+    "steps": [
+      {
+        "step": 2,
+        "status": "running",
+        "remark": "Step 1"
+      },
+      {
+        "step": 2,
+        "status": "done",
+        "remark": "navigate: Navigate to http://localhost:4173"
+      },
+      {
+        "step": 3,
+        "status": "running",
+        "remark": "Step 2"
+      },
+      {
+        "step": 3,
+        "status": "done",
+        "remark": "wait: queued plan (3 steps): click \"Add to cart\"; click \"Add to cart\"; click \"Add to c"
+      },
+      {
+        "step": 4,
+        "status": "running",
+        "remark": "Step 3"
+      },
+      {
+        "step": 4,
+        "status": "done",
+        "remark": "click: Click \"Add to cart\""
+      },
+      {
+        "step": 5,
+        "status": "running",
+        "remark": "Step 4"
+      },
+      {
+        "step": 5,
+        "status": "done",
+        "remark": "click: Click \"Add to cart\""
+      },
+      {
+        "step": 6,
+        "status": "running",
+        "remark": "Step 5"
+      },
+      {
+        "step": 6,
+        "status": "done",
+        "remark": "click: Click \"Add to cart\""
+      },
+      {
+        "step": 7,
+        "status": "running",
+        "remark": "Step 6"
+      },
+      {
+        "step": 7,
+        "status": "done",
+        "remark": "wait: queued plan (2 steps): type \"Promo code\"; click \"Apply promo\""
+      },
+      {
+        "step": 8,
+        "status": "running",
+        "remark": "Step 7"
+      },
+      {
+        "step": 8,
+        "status": "done",
+        "remark": "type: Type \"SAVE10\" into \"Promo code\""
+      },
+      {
+        "step": 9,
+        "status": "running",
+        "remark": "Step 8"
+      },
+      {
+        "step": 9,
+        "status": "done",
+        "remark": "click: Click \"Apply promo\""
+      },
+      {
+        "step": 10,
+        "status": "running",
+        "remark": "Step 9"
+      },
+      {
+        "step": 10,
+        "status": "done",
+        "remark": "wait: PRIMARY: confirm the applied promo state is settled"
+      },
+      {
+        "step": 11,
+        "status": "running",
+        "remark": "Step 10"
+      },
+      {
+        "step": 11,
+        "status": "done",
+        "remark": "analyze: Get the Total and save as {{total}}."
+      },
+      {
+        "step": 12,
+        "status": "running",
+        "remark": "Step 11"
+      },
+      {
+        "step": 12,
+        "status": "done",
+        "remark": "assert: the total shows '$37.79'"
+      },
+      {
+        "step": 13,
+        "status": "running",
+        "remark": "Step 12"
+      },
+      {
+        "step": 13,
+        "status": "done",
+        "remark": "click: Clicking Check out in the cart sidebar"
+      },
+      {
+        "step": 14,
+        "status": "running",
+        "remark": "Step 13"
+      },
+      {
+        "step": 14,
+        "status": "done",
+        "remark": "analyze: the page contains 'Order placed'"
+      },
+      {
+        "step": 15,
+        "status": "running",
+        "remark": "Step 14"
+      },
+      {
+        "step": 15,
+        "status": "done",
+        "remark": "assert: the page contains 'Order placed'"
+      },
+      {
+        "status": "skipped",
+        "remark": ""
+      },
+      {
+        "status": "passed",
+        "remark": ""
+      }
+    ],
+    "failures": []
+  },
+  "diagnosis": [],
+  "fix": null
+}
